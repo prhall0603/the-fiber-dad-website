@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c \"import http.server\")",
+      "Bash(python3 -m http.server 8080)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code} | Size: %{size_download} bytes\\\\n\" http://localhost:8080/)",
+      "Bash(curl -s -o /dev/null -w \"CSS: HTTP %{http_code}\\\\n\" http://localhost:8080/css/style.css)",
+      "Bash(curl -s -o /dev/null -w \"JS:  HTTP %{http_code}\\\\n\" http://localhost:8080/js/main.js)",
+      "Bash(git --version)",
+      "Bash(gh --version)",
+      "Bash(git config *)",
+      "Bash(curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg)",
+      "Bash(dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg)",
+      "Bash(chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg)",
+      "Bash(dpkg --print-architecture)",
+      "Bash(echo \"deb [arch=$\\(dpkg --print-architecture\\) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main\")",
+      "Bash(tee /etc/apt/sources.list.d/github-cli.list)",
+      "Bash(apt-get update *)",
+      "Bash(apt-get install *)",
+      "Bash(gh auth *)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
+    ]
+  }
+}
